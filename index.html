@@ -12,6 +12,13 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./style.css" />
 
     <title>Frontend Mentor | Interactive card details form</title>
@@ -26,52 +33,56 @@
             class="front__image"
           />
           <div class="front__info">
-            <p class="front__number">0000 0000 0000 0000</p>
+            <p id="inp_number" class="front__number info__label">
+              0000 0000 0000 0000
+            </p>
             <div class="front__info-user">
-              <p class="user-info__name">Jane Appleseed</p>
-              <p class="user-info__exp-date">00/00</p>
+              <p id="inp_name" class="info__label">Jane Appleseed</p>
+              <p id="inp_exp_date" class="info__label">00/00</p>
             </div>
           </div>
         </div>
         <div class="card__back-container">
-          <p class="back__cvc">000</p>
+          <p id="inp_cvc" class="back__cvc info__label">000</p>
         </div>
       </div>
       <form class="main__info-container">
         <div class="main__info">
           <div class="info__first-row">
-            <label for="name">Cardholder Name</label>
+            <label for="name" class="info__label">Cardholder Name</label>
             <input
               type="text"
               name="name"
               id="name"
+              class="inp"
               placeholder="e.g. Jane Appleseed"
               autocomplete="name"
             />
-            <p class="info__name-error-message">Can't be blank</p>
+            <p class="info__error-message">Can't be blank</p>
           </div>
 
           <div class="info__second-row">
-            <label for="number">Card Number</label>
+            <label for="number" class="info__label">Card Number</label>
             <input
               type="number"
               name="number"
               id="number"
+              class="inp"
               placeholder="e.g. 1234 5678 9123 0000"
               autocomplete="cc-number"
             />
-            <p class="info__number-error-message">Wrong format, numbers only</p>
+            <p class="info__error-message">Wrong format, numbers only</p>
           </div>
 
           <div class="info__third-row">
-            <p class="info__exp">Exp. Date (MM/YY)</p>
-            <p class="info__cvc">CVC</p>
+            <p class="info__exp" class="info__label">Exp. Date (MM/YY)</p>
+            <p class="info__cvc" class="info__label">CVC</p>
             <label for="exp-mm">
               <input
                 type="number"
                 name="exp-mm"
                 id="exp-mm"
-                class="exp"
+                class="inp"
                 placeholder="MM"
                 autocomplete="off"
               />
@@ -81,7 +92,7 @@
                 type="number"
                 name="exp-yy"
                 id="exp-yy"
-                class="exp"
+                class="inp"
                 placeholder="YY"
                 autocomplete="off"
               />
@@ -91,13 +102,15 @@
                 type="number"
                 name="cvc"
                 id="cvc"
-                class="exp"
+                class="inp"
                 placeholder="e.g. 123"
                 autocomplete="off"
               />
             </label>
+            <p class="info__error-message error--exp">Can't be blank</p>
+            <p class="info__error-message">Can't be blank</p>
           </div>
-          <button type="submit">Confirm</button>
+          <button type="submit" class="submit-btn">Confirm</button>
         </div>
       </form>
       <!-- Completed state start -->

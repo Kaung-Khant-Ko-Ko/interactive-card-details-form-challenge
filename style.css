@@ -1,6 +1,5 @@
 body {
   margin: 0px;
-  background-color: cyan;
 
   font-family: "Space Grotesk", sans-serif;
   font-size: 18px;
@@ -65,7 +64,7 @@ p {
 
 .front__number {
   font-size: 1.75rem;
-  margin-bottom: 5.5%;
+  margin-bottom: 7.5%;
 }
 
 .card__back-container {
@@ -91,6 +90,8 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  overflow: hidden;
 }
 
 .main__info {
@@ -125,7 +126,20 @@ p {
   letter-spacing: 3px;
 }
 
+.front__info-label {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+
+.exp-date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .info__error-message {
+  overflow: hidden;
   color: hsl(0, 100%, 66%);
 }
 
@@ -155,9 +169,17 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0px;
 }
 
+.inp:focus {
+  outline: 1px solid #fff;
+  border-left-color: hsl(249, 99%, 64%);
+  border-top-color: hsl(249, 99%, 64%);
+  border-right-color: hsl(278, 94%, 30%);
+  border-bottom-color: hsl(278, 94%, 30%);
+}
+
 .submit-btn {
   width: 100%;
-  aspect-ratio: 6.25 / 1;
+  aspect-ratio: 8.64 / 1;
   border-radius: 10px;
   border-style: solid;
   background-color: hsl(278, 68%, 11%);
@@ -172,6 +194,46 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .thankyou-container {
+  width: 50%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.thankyou {
+  width: 60%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.thankyou__image {
+  width: 18.52%;
+}
+
+.thankyou__title {
+  margin-top: 20px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.thankyou__desc {
+  margin-bottom: 20px;
+  color: hsl(279, 6%, 55%);
+}
+
+.hide-state {
   width: 0px;
   overflow: hidden;
+}
+
+.error-warning {
+  border-color: hsl(0, 100%, 66%);
 }

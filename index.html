@@ -37,8 +37,12 @@
               0000 0000 0000 0000
             </p>
             <div class="front__info-user">
-              <p id="inp_name" class="info__label">Jane Appleseed</p>
-              <p id="inp_exp_date" class="info__label">00/00</p>
+              <p id="inp_name" class="front__info-label">Jane Appleseed</p>
+              <div class="info__label exp-date-container">
+                <p id="inp_exp_date_mm" class="front__info-label">00</p>
+                <p class="front__info-label">/</p>
+                <p id="inp_exp_date_yy" class="front__info-label">00</p>
+              </div>
             </div>
           </div>
         </div>
@@ -57,21 +61,25 @@
               class="inp"
               placeholder="e.g. Jane Appleseed"
               autocomplete="name"
+              tabindex="1"
             />
-            <p class="info__error-message">Can't be blank</p>
+            <p id="error--name" class="info__error-message">Can't be blank</p>
           </div>
 
           <div class="info__second-row">
             <label for="number" class="info__label">Card Number</label>
             <input
-              type="number"
+              type="text"
               name="number"
               id="number"
               class="inp"
               placeholder="e.g. 1234 5678 9123 0000"
               autocomplete="cc-number"
+              tabindex="2"
             />
-            <p class="info__error-message">Wrong format, numbers only</p>
+            <p id="error--number" class="info__error-message">
+              Wrong format, numbers only
+            </p>
           </div>
 
           <div class="info__third-row">
@@ -85,6 +93,7 @@
                 class="inp"
                 placeholder="MM"
                 autocomplete="off"
+                tabindex="3"
               />
             </label>
             <label for="exp-yy">
@@ -95,6 +104,7 @@
                 class="inp"
                 placeholder="YY"
                 autocomplete="off"
+                tabindex="4"
               />
             </label>
             <label for="cvc">
@@ -105,25 +115,32 @@
                 class="inp"
                 placeholder="e.g. 123"
                 autocomplete="off"
+                tabindex="5"
               />
             </label>
-            <p class="info__error-message error--exp">Can't be blank</p>
-            <p class="info__error-message">Can't be blank</p>
+            <p id="error--exp" class="info__error-message error--exp">
+              Can't be blank
+            </p>
+            <p id="error--cvc" class="info__error-message">Can't be blank</p>
           </div>
-          <button type="submit" class="submit-btn">Confirm</button>
+          <button type="submit" id="confirm" class="submit-btn" tabindex="6">Confirm</button>
         </div>
       </form>
       <!-- Completed state start -->
       <div class="thankyou-container">
-        <img
-          src="./images/icon-complete.svg"
-          alt="Complete icon"
-          class="thankyou__image"
-        />
-        <p class="thankyou__title">Thank you!</p>
-        <p class="thankyou__desc">We've added your card details</p>
-        <button type="button">Continue</button>
+        <div class="thankyou">
+          <img
+            src="./images/icon-complete.svg"
+            alt="Complete icon"
+            class="thankyou__image"
+          />
+          <p class="thankyou__title">Thank you!</p>
+          <p class="thankyou__desc">We've added your card details</p>
+          <button type="button" id="continue" class="submit-btn">Continue</button>
+        </div>
       </div>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

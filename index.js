@@ -143,7 +143,12 @@ $("#confirm").click(function (event) {
     errors--;
   }
 
-  if ($("#exp-mm").val() === "" || $("#exp-yy").val() === "") {
+  if (
+    $("#exp-mm").val() === "" ||
+    $("#exp-yy").val() === "" ||
+    $("#exp-mm").val().length < 2 ||
+    $("#exp-yy").val().length < 2
+  ) {
     $("#error--exp").slideUp();
     setTimeout(() => {
       $("#error--exp").slideDown();
@@ -163,7 +168,7 @@ $("#confirm").click(function (event) {
     errors--;
   }
 
-  if ($("#cvc").val() === "") {
+  if ($("#cvc").val() === "" || $("#cvc").val().length < 3) {
     $("#error--cvc").slideUp();
     setTimeout(() => {
       $("#error--cvc").slideDown();
@@ -177,12 +182,15 @@ $("#confirm").click(function (event) {
 
   if (errors === 0) {
     $(".main__info-container").animate({ width: 0, height: 0 });
-    $(".thankyou-container").animate({ width: "50%", height: "100vh" });
+    $(".thankyou-container").animate({ width: "100%", height: "100vh" });
   }
 });
 
 $("#continue").click(function () {
   $(".inp").val("");
+  $(".inp").removeClass("error-warning");
+  $(".info__error-message").slideUp();
+
   $("#inp_number").text("0000 0000 0000 0000");
   $("#inp_name").text("Jane Appleseed");
   $("#inp_exp_date_mm").text("00");
@@ -190,6 +198,6 @@ $("#continue").click(function () {
   $("#inp_cvc").text("000");
   setTimeout(() => {
     $(".thankyou-container").animate({ width: 0, height: 0 });
-    $(".main__info-container").animate({ width: "50%", height: "100vh" });
+    $(".main__info-container").animate({ width: "100%", height: "100vh" });
   }, 200);
 });
